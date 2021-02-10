@@ -1,0 +1,37 @@
+<h1>Hello world</h1>
+
+<h2>
+  <%= @restaurant.name  %>
+</h2>
+
+<h3>
+  <%= @restaurant.address %>
+</h3>
+
+<h3>
+  <%= @restaurant.phone_number %>
+</h3>
+
+
+<h3>
+  <%= @restaurant.category %>
+</h3>
+
+
+
+
+<ul>
+  <% @restaurant.reviews.each do |review|  %>
+    <li>
+  <%= review.content  %>
+  <%= review.rating %>
+    </li>
+  <% end  %>
+</ul>
+
+<%= render "review_form", restaurant: @restaurant, review: @review %>
+
+<%= link_to "Back to list", restaurants_path %>
+
+
+
